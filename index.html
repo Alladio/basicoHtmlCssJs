@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+
+    <title>Tabela</title>
+</head>
+<body>
+    <h1>Tabela</h1>
+    <div id='boxx'>
+    </div>
+
+    <script>
+
+        let listaUsuarios = [
+            {
+                nome: "Alladio",
+                sobrenome: "Bonesso",
+                idade: 32
+            },
+            {
+                nome: "Thiago",
+                sobrenome: "Inteliger",
+                idade: 21
+            },
+            {
+                nome: "Lilian",
+                sobrenome: "Caron",
+                idade: 25
+            }
+        ];
+
+        let html = "<table class='table' border='2'>";
+            html += "<thead>"
+            html += "<tr style='​fontsize: 15'>";
+            html += "<th scope='col'> Nome </td>";
+            html += "<th scope='col'> Sobrenome</td>";
+            html += "<th scope='col'> Idade</td>";
+            html += "</tr>";
+            html += "</thead>"
+
+        // for (var i = 0; i < listaUsuarios.length; i++) {
+        //     html += "<tr>";
+        //     html += "<td>" + listaUsuarios[i].nome + "</td>";
+        //     html += "<td>" + listaUsuarios[i].sobrenome + "</td>";
+        //     html += "<td>" + listaUsuarios[i].idade + "</td>";
+        //     html += "</tr>";
+        // }
+
+        for (let x in listaUsuarios){
+
+            for(let y in x){
+
+            }    
+        }
+
+        html += "</table>";
+        document.getElementById("boxx").innerHTML = html;
+    </script>
+</body>
+
+
+</html>
