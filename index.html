@@ -11,25 +11,37 @@
 
     <title>Tabela</title>
 </head>
+
 <body>
     <h1>Tabela</h1>
     <div id='boxx'>
     </div>
 
     <script>
+        function SomeDeleteRowFunction(btn) {
+            var p = btn.parentNode.parentNode;
+            p.parentNode.removeChild(p);
+        }
 
+        function SomeDeleteAllTable(btn) {
+            var p = btn.parentNode.parentNode.parentNode.parentNode;
+            p.parentNode.removeChild(p);
+        }
         let listaUsuarios = [
             {
+                id: 1,
                 nome: "Alladio",
                 sobrenome: "Bonesso",
                 idade: 32
             },
             {
+                id: 2,
                 nome: "Thiago",
                 sobrenome: "Inteliger",
                 idade: 21
             },
             {
+                id: 3,
                 nome: "Lilian",
                 sobrenome: "Caron",
                 idade: 25
@@ -37,31 +49,27 @@
         ];
 
         let html = "<table class='table' border='2'>";
-            html += "<thead>"
-            html += "<tr style='​fontsize: 15'>";
-            html += "<th scope='col'> Nome </td>";
-            html += "<th scope='col'> Sobrenome</td>";
-            html += "<th scope='col'> Idade</td>";
+        html += "<thead>"
+        html += "<tr style='​fontsize: 15'>";
+        html += "<th scope='col'> ID </td>";
+        html += "<th scope='col'> Nome </td>";
+        html += "<th scope='col'> Sobrenome</td>";
+        html += "<th scope='col'> Excluir</td>";
+        html += "<td> <input type='button' value='EXCLUIR TODOS' onclick='SomeDeleteAllTable(this)'> </td>";
+        html += "</tr>";
+        html += "</thead>"
+
+        for (var i = 0; i < listaUsuarios.length; i++) {
+            html += "<tr>";
+            html += "<td>" + listaUsuarios[i].id + "</td>";
+            html += "<td>" + listaUsuarios[i].nome + "</td>";
+            html += "<td>" + listaUsuarios[i].sobrenome + "</td>";
+            html += "<td>" + listaUsuarios[i].idade + "</td>";
+            html += "<td> <input type='button' value='Excluir' onclick='SomeDeleteRowFunction(this)'> </td>";
             html += "</tr>";
-            html += "</thead>"
-
-        // for (var i = 0; i < listaUsuarios.length; i++) {
-        //     html += "<tr>";
-        //     html += "<td>" + listaUsuarios[i].nome + "</td>";
-        //     html += "<td>" + listaUsuarios[i].sobrenome + "</td>";
-        //     html += "<td>" + listaUsuarios[i].idade + "</td>";
-        //     html += "</tr>";
-        // }
-
-        for (let x in listaUsuarios){
-
-            console.log(x.nome); 
         }
 
-        html += "</table>";
-        document.getElementById("boxx").innerHTML = html;
+        document.getElementById("boxx").innerHTML = html;        
     </script>
 </body>
-
-
 </html>
