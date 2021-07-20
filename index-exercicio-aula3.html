@@ -47,11 +47,17 @@
         </tr>
 
     </table>
-    <form>
-
-
-    </form>
-
+    <table class='table' id='table2' border='2'>
+        <thead>
+            <tr>
+                <th scope="col"> ID </td>
+                <th scope="col"> Nome </td>
+                <th scope="col"> Sobrenome</td>
+                <th scope="col"> Excluir</td>
+                <td> <input type="button" value="EXCLUIR TODOS" onclick="SomeDeleteAllTable(this)"> </td>
+            </tr>
+        </thead>       
+    </table>
 
     <div id='boxx'>
     </div>
@@ -60,11 +66,8 @@
     </script>
     <script>
 
-
         $(document).ready(function () {
 
-            // Denotes total number of rows
-            var rowIdx = 0;
 
             // jQuery button click event to add a row
             $('#addBtn').on('click', function () {
@@ -109,75 +112,20 @@
                 // Removing the current row.
                 $(this).closest('tr').remove();
 
-                
+
             });
         });
 
-        function SomeDeleteRowFunction(btn) {
-            var p = btn.parentNode.parentNode;
-            p.parentNode.removeChild(p);
-        }
+        // function SomeDeleteRowFunction(btn) {
+        //     var p = btn.parentNode.parentNode;
+        //     p.parentNode.removeChild(p);
+        // }
 
-        function SomeDeleteAllTable(btn) {
-            var p = btn.parentNode.parentNode.parentNode.parentNode;
-            p.parentNode.removeChild(p);
-        }
+        // function SomeDeleteAllTable(btn) {
+        //     var p = btn.parentNode.parentNode.parentNode.parentNode;
+        //     p.parentNode.removeChild(p);
+        // }
 
-        function cadastrar() {
-            let CONST1 = document.getElementById('valor1').value;
-            let CONST2 = document.getElementById('valor2').value;
-            let CONST3 = document.getElementById('valor3').value;
-            let CONST4 = document.getElementById('valor4').value;
-
-            //alert("teste");
-
-        }
-
-
-        let listaUsuarios = [
-            {
-                id: 1,
-                nome: "Alladio",
-                sobrenome: "Bonesso",
-                idade: 32
-            },
-            {
-                id: 2,
-                nome: "Thiago",
-                sobrenome: "Inteliger",
-                idade: 21
-            },
-            {
-                id: 3,
-                nome: "Lilian",
-                sobrenome: "Caron",
-                idade: 25
-            }
-        ];
-
-        let html = "<table class='table' id='table2' border='2'>";
-
-        html += "<thead>"
-        html += "<tr style='​fontsize: 15'>";
-        html += "<th scope='col'> ID </td>";
-        html += "<th scope='col'> Nome </td>";
-        html += "<th scope='col'> Sobrenome</td>";
-        html += "<th scope='col'> Excluir</td>";
-        html += "<td> <input type='button' value='EXCLUIR TODOS' onclick='SomeDeleteAllTable(this)'> </td>";
-        html += "</tr>";
-        html += "</thead>"
-
-        for (var i = 0; i < listaUsuarios.length; i++) {
-            html += "<tr>";
-            html += "<td>" + listaUsuarios[i].id + "</td>";
-            html += "<td>" + listaUsuarios[i].nome + "</td>";
-            html += "<td>" + listaUsuarios[i].sobrenome + "</td>";
-            html += "<td>" + listaUsuarios[i].idade + "</td>";
-            html += "<td> <input type='button' value='Excluir' onclick='SomeDeleteRowFunction(this)'> </td>";
-            html += "</tr>";
-        }
-
-        document.getElementById("boxx").innerHTML = html;
     </script>
 </body>
 
