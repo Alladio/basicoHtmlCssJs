@@ -16,6 +16,19 @@
 <body>
     <h1>Tabela</h1>
     <div id='boxx'>
+         <table id='table' class='table'>
+            <thead>
+            <tr>
+            <th scope='col'> ID </td>
+            <th scope='col'> Nome </td>
+            <th scope='col'> Sobrenome</td>
+            <th scope='col'> Excluir</td>
+            <td> <input type='button' value='EXCLUIR TODOS' onclick='SomeDeleteAllTable(this)'> </td>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
     </div>
 
     <script>
@@ -28,6 +41,7 @@
             var p = btn.parentNode.parentNode.parentNode.parentNode;
             p.parentNode.removeChild(p);
         }
+
         let listaUsuarios = [
             {
                 id: 1,
@@ -47,46 +61,24 @@
                 sobrenome: "Caron",
                 idade: 25
             }
-        ];
-
-        let html = "<table id='table' class='table' border='2'>";
-        html += "<thead>"
-        html += "<tr style='​fontsize: 15'>";
-        html += "<th scope='col'> ID </td>";
-        html += "<th scope='col'> Nome </td>";
-        html += "<th scope='col'> Sobrenome</td>";
-        html += "<th scope='col'> Excluir</td>";
-        html += "<td> <input type='button' value='EXCLUIR TODOS' onclick='SomeDeleteAllTable(this)'> </td>";
-        html += "</tr>";
-        html += "</thead>"
+        ];        
 
         listaUsuarios.forEach(function(object, index){
-            //console.log(object)
-            $('.table').append('<tr> teste ${object.idade} </tr>');
+            console.log(object)
+            $('#table tbody').append(`<tr> <td>teste ${object.nome}</td> </tr>`);
         });
 
         $('#cep').on('focusout', function(params){
             $.ajax({
-                url: 'https://www.${object.idade}' ,
+                url: 'https://www.viacep.com/${object.idade}' ,
                 data: this.value,
                 type: 'GET',
                 success: function(retorno){
-                    console.log(retorno);
+                    console.log(retorno)
+                    $('#endereco').val(retorno.endereco);
                 },
             })
         });
-
-        // for (var i = 0; i < listaUsuarios.length; i++) {
-        //     html += "<tr>";
-        //     html += "<td>" + listaUsuarios[i].id + "</td>";
-        //     html += "<td>" + listaUsuarios[i].nome + "</td>";
-        //     html += "<td>" + listaUsuarios[i].sobrenome + "</td>";
-        //     html += "<td>" + listaUsuarios[i].idade + "</td>";
-        //     html += "<td> <input type='button' value='Excluir' onclick='SomeDeleteRowFunction(this)'> </td>";
-        //     html += "</tr>";
-        // }
-
-        document.getElementById("boxx").innerHTML = html;
-    </script>
+       </script>
 </body>
 </html>

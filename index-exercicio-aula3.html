@@ -100,27 +100,19 @@
             // jQuery button click event to remove a row.
             $('#table2').on('click', '.remove', function () {
 
-
-
                 // Getting all the rows next to the row
                 // containing the clicked button
                 var child = $(this).closest('tr').nextAll();
 
-
-
                 // Removing the current row.
                 $(this).closest('tr').remove();
 
-
             });
         });
-
         function SomeDeleteAllTable(btn) {
             var p = btn.parentNode.parentNode.parentNode.parentNode;
             p.parentNode.removeChild(p);
         }
-
     </script>
 </body>
-
 </html>
