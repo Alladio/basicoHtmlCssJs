@@ -1,5 +1,5 @@
 <section class="property-binding">
-    
+
     <!-- AULA 09 -->
     <!-- <article>
         <h3>Interpolation</h3>
@@ -55,7 +55,7 @@
         </div>
     </article> -->
 
-    
+
     <!-- AULA 11 -->
     <!-- <article>
         <h3>Event binding</h3>
@@ -72,8 +72,8 @@
             (blur)="salvarValor(campoInput.value)"
             #campoInput />
                 <!-- (keyup.enter)="salvarValor($any($event.target).value)"/> DEPRECIADO -->
-       
-     <!-- </div> 
+
+    <!-- </div> 
             <br><br>
             <p> Valor Atual: {{ valorAtual }} </p>
             <p> Salvar Valor: {{ valorSalvo }} </p>
@@ -89,8 +89,46 @@
             </span>
     </article> -->
 
-    
-    <!-- AULA 12 -->
-    
 
+    <!-- AULA 12 -->
+    <!-- <article>
+        <h3> Two-Way Data Binding
+
+            <div>
+                <input type="text" [value]="nome" (input)="nome = $any($event.target).value" />
+                <br>
+                <input type="text" [ngModel]="nome" (ngModelChange)="nome = $event" />
+                <br>
+
+                <input type="text" [(ngModel)]="nome" />
+                <br>
+                <input type="text" bindon-ngModel="nome" />
+                <p>Você digitou: {{ nome }} </p>
+
+            </div>
+
+
+            <div>
+                
+            <input type="text" bindon-ngModel="pessoa.nome" />
+            <input type="text" [(ngModel)]="pessoa.idade" />
+
+            </div>
+
+            
+            <p>Seu nome é: {{ pessoa.nome }} </p>
+            
+            <p>Sua idade é: {{ pessoa.idade }} </p>
+        </h3>
+    </article> -->
+
+    
+    <!-- AULA 12 TAMBÉM -->
+    <!-- <h3>Formulário</h3>
+    <app-meu-form></app-meu-form> -->
+
+    
+    <!-- AULA 13 -->
+    <h3>INPUT/OUTPUT Properties</h3>
+    <app-curso [nome]="nomeDoCurso"></app-curso>
 </section>
